@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Box, VStack, HStack, Text, Button, Image, Input, useToast } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 import { FaHome, FaMoneyBillAlt, FaHistory, FaUser } from "react-icons/fa";
 
 const Index = () => {
@@ -67,22 +68,30 @@ const Index = () => {
           </Button>
         </HStack>
         <HStack spacing={8} mt={8}>
-          <VStack>
-            <FaHome size={24} />
-            <Text>Home</Text>
-          </VStack>
-          <VStack>
-            <FaMoneyBillAlt size={24} />
-            <Text>Transfer</Text>
-          </VStack>
-          <VStack>
-            <FaHistory size={24} />
-            <Text>History</Text>
-          </VStack>
-          <VStack>
-            <FaUser size={24} />
-            <Text>Profile</Text>
-          </VStack>
+          <Link to="/">
+            <VStack>
+              <FaHome size={24} />
+              <Text>Home</Text>
+            </VStack>
+          </Link>
+          <Link to="/transfer">
+            <VStack>
+              <FaMoneyBillAlt size={24} />
+              <Text>Transfer</Text>
+            </VStack>
+          </Link>
+          <Link to="/history">
+            <VStack>
+              <FaHistory size={24} />
+              <Text>History</Text>
+            </VStack>
+          </Link>
+          <Link to="/profile">
+            <VStack>
+              <FaUser size={24} />
+              <Text>Profile</Text>
+            </VStack>
+          </Link>
         </HStack>
       </VStack>
     </Box>
